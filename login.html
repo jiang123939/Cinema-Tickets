@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in - Cinema.Tickets</title>
+    <link rel="stylesheet" href="cinema-kit/kit/tokens.css">
+    <link rel="stylesheet" href="cinema-kit/kit/base.css">
+    <link rel="stylesheet" href="cinema-kit/kit/layout.css">
+    <link rel="stylesheet" href="cinema-kit/kit/components.css">
+</head>
+<body>
+    <div class="l-page">
+        <header class="l-header">
+            <div class="l-container c-header">
+                <a class="c-header__logo" href=" ">
+                    <svg class="c-icon c-icon--lg" aria-hidden="true"><use href="cinema-kit/kit/icons.svg#icon-logo"></use></svg>
+                    <span>Cinema.Tickets</span>
+                </a >
+                <nav class="c-nav" aria-label="Main">
+                    <a class="c-nav__link" href="index.html">Movies</a >
+                    <a class="c-nav__link" href="bookings.html">Bookings</a >
+                    <a class="c-nav__link" href="cart.html">Cart <span class="c-counter" hidden="hidden" id="header-cart-counter">0</span></a >
+                </nav>
+                <div class="c-header__user">
+                    <a class="c-btn c-btn--secondary c-btn--sm" href="login.html">Log in</a >
+                    <a class="c-btn c-btn--primary c-btn--sm" href="registration.html">Register</a >
+                </div>
+            </div>
+        </header>
+
+        <main class="l-main">
+            <div class="l-container l-stack l-stack--lg">
+                <div class="l-narrow">
+                    <section class="c-card">
+                        <div class="c-card__header"><h1 class="c-card__title">Log in</h1></div>
+                        <form class="c-card__body" id="login-form" novalidate>
+                            <div id="error-container"></div>
+                            
+                            <div class="c-field">
+                                <label class="c-field__label" for="login-email">Email</label>
+                                <input class="c-input" id="login-email" type="email" name="email" required>
+                            </div>
+                            <div class="c-field">
+                                <label class="c-field__label" for="login-password">Password</label>
+                                <input class="c-input" id="login-password" type="password" name="password" required>
+                            </div>
+                            <button class="c-btn c-btn--primary c-btn--block" type="submit">Log in</button>
+                        </form>
+                        <div class="c-card__footer"><p class="u-muted">No account? <a href="registration.html">Register</a ></p ></div>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="js/login.js"></script>
+</body>
+</html>

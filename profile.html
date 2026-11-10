@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile - Cinema.Tickets</title>
+    <link rel="stylesheet" href="cinema-kit/kit/tokens.css">
+    <link rel="stylesheet" href="cinema-kit/kit/base.css">
+    <link rel="stylesheet" href="cinema-kit/kit/layout.css">
+    <link rel="stylesheet" href="cinema-kit/kit/components.css">
+</head>
+<body>
+    <div class="l-page">
+        <header class="l-header">
+            <div class="l-container c-header">
+                <a class="c-header__logo" href=" ">
+                    <svg class="c-icon c-icon--lg" aria-hidden="true"><use href="cinema-kit/kit/icons.svg#icon-logo"></use></svg>
+                    <span>Cinema.Tickets</span>
+                </a >
+                <nav class="c-nav" aria-label="Main">
+                    <a class="c-nav__link" href="index.html">Movies</a >
+                    <a class="c-nav__link" href="bookings.html">Bookings</a >
+                    <a class="c-nav__link" href="cart.html">Cart <span class="c-counter" hidden="hidden" id="header-cart-counter">0</span></a >
+                </nav>
+                <div class="c-header__user">
+                    <div id="auth-guest" style="display: none;"></div>
+                    <div id="auth-user" style="display: flex; align-items: center; gap: 12px;">
+                        <a class="c-header__email" href="profile.html">
+                            <svg class="c-icon c-icon--sm" aria-hidden="true"><use href="cinema-kit/kit/icons.svg#icon-user"></use></svg>
+                            <span id="header-email">Loading...</span>
+                        </a >
+                        <button class="c-btn c-btn--ghost c-btn--sm" type="button" id="logout-btn">Log out</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="l-main">
+            <div class="l-container l-stack l-stack--lg">
+                <div class="l-narrow l-narrow--wide">
+                    <section class="c-card">
+                        <div class="c-card__header"><h1 class="c-card__title">Profile</h1></div>
+                        <form class="c-card__body" id="profile-form">
+                            <div class="c-static">
+                                <span class="c-static__label">Email</span>
+                                <span class="c-static__value" id="prof-email">Loading...</span>
+                            </div>
+                            <div class="c-static">
+                                <span class="c-static__label">Gender</span>
+                                <span class="c-static__value" id="prof-gender">Loading...</span>
+                            </div>
+                            <div class="c-field">
+                                <label class="c-field__label">Full name</label>
+                                <input class="c-input" id="prof-name" type="text" required>
+                            </div>
+                            <div class="c-field">
+                                <label class="c-field__label">Date of birth</label>
+                                <input class="c-input" id="prof-birth" type="date" required>
+                            </div>
+                            <div class="c-field">
+                                <label class="c-field__label">Phone number</label>
+                                <input class="c-input" id="prof-phone" type="tel" required>
+                            </div>
+                            <div class="l-cluster l-cluster--end">
+                                <button class="c-btn c-btn--primary" type="submit" id="save-btn">Save changes</button>
+                            </div>
+                        </form>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="js/common.js"></script>
+    <script type="module" src="js/profile.js"></script>
+</body>
+</html>

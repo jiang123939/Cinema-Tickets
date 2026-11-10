@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Cinema.Tickets</title>
+    <link rel="stylesheet" href="cinema-kit/kit/tokens.css">
+    <link rel="stylesheet" href="cinema-kit/kit/base.css">
+    <link rel="stylesheet" href="cinema-kit/kit/layout.css">
+    <link rel="stylesheet" href="cinema-kit/kit/components.css">
+</head>
+<body>
+    <div class="l-page">
+        <header class="l-header">
+            <div class="l-container c-header">
+                <a class="c-header__logo" href=" ">
+                    <svg class="c-icon c-icon--lg" aria-hidden="true"><use href="cinema-kit/kit/icons.svg#icon-logo"></use></svg>
+                    <span>Cinema.Tickets</span>
+                </a >
+                <nav class="c-nav" aria-label="Main">
+                    <a class="c-nav__link" href="index.html">Movies</a >
+                    <a class="c-nav__link" href="bookings.html">Bookings</a >
+                    <a class="c-nav__link" href="cart.html">Cart <span class="c-counter" hidden="hidden" id="header-cart-counter">0</span></a >
+                </nav>
+                <div class="c-header__user">
+                    <div id="auth-guest" style="display: none;"></div>
+                    <div id="auth-user" style="display: flex; align-items: center; gap: 12px;">
+                        <a class="c-header__email" href="profile.html">
+                            <svg class="c-icon c-icon--sm" aria-hidden="true"><use href="cinema-kit/kit/icons.svg#icon-user"></use></svg>
+                            <span id="header-email">Loading...</span>
+                        </a >
+                        <button class="c-btn c-btn--ghost c-btn--sm" type="button" id="logout-btn">Log out</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="l-main">
+            <div class="l-container l-stack l-stack--lg">
+                <div class="c-page-title"><h1>Checkout</h1></div>
+                <div id="checkout-alerts"></div>
+                
+                <div class="l-split">
+                    <div class="l-split__main">
+                        <section class="l-section">
+                            <h2 class="l-section__title">Contact details</h2>
+                            <div class="c-card">
+                                <div class="c-card__body">
+                                    <div class="c-static"><span class="c-static__label">Full name</span><span class="c-static__value" id="contact-name">Loading...</span></div>
+                                    <div class="c-static"><span class="c-static__label">Email</span><span class="c-static__value" id="contact-email">Loading...</span></div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="l-section">
+                            <h2 class="l-section__title">Payment method</h2>
+                            <fieldset class="l-grid l-grid--cols-2">
+                                <label class="c-choice-card">
+                                    <input class="c-choice-card__input" type="radio" name="paymentMethod" value="Card" checked>
+                                    <span class="c-choice-card__body"><span class="c-choice-card__title">Card</span></span>
+                                </label>
+                                <label class="c-choice-card">
+                                    <input class="c-choice-card__input" type="radio" name="paymentMethod" value="Cash">
+                                    <span class="c-choice-card__body"><span class="c-choice-card__title">Cash</span></span>
+                                </label>
+                            </fieldset>
+                        </section>
+
+                        <section class="l-section">
+                            <h2 class="l-section__title">Promo code</h2>
+                            <div class="c-promo" id="promo-container">
+                                <div class="c-promo__form">
+                                    <input class="c-input c-promo__input" id="promo-input" type="text" placeholder="Enter the promo code">
+                                    <button class="c-btn c-btn--secondary" type="button" id="apply-promo-btn">Apply</button>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="l-section">
+                            <h2 class="l-section__title">Tickets</h2>
+                            <div class="l-stack" id="tickets-container"></div>
+                        </section>
+                    </div>
+
+                    <aside class="l-split__aside">
+                        <section class="c-summary">
+                            <h2 class="c-summary__title">Summary</h2>
+                            <dl class="c-summary__lines">
+                                <div class="c-summary__line"><dt>Subtotal</dt><dd id="subtotal-price">0 ₽</dd></div>
+                                <div class="c-summary__line c-summary__line--discount" id="discount-line" style="display: none;">
+                                    <dt>Discount</dt><dd id="discount-price">0 ₽</dd>
+                                </div>
+                                <div class="c-summary__total"><dt>Total</dt><dd id="total-price">0 ₽</dd></div>
+                            </dl>
+                            <div class="c-summary__actions">
+                                <button class="c-btn c-btn--primary c-btn--block" id="confirm-btn">Confirm booking</button>
+                            </div>
+                        </section>
+                    </aside>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/demo-mode.js"></script>
+    <script type="module" src="js/common.js"></script>
+    <script type="module" src="js/purchase.js"></script>
+</body>
+</html>

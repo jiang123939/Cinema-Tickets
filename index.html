@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies - Cinema.Tickets</title>
+    
+    <!-- UI Kit Styles -->
+    <link rel="stylesheet" href="cinema-kit/kit/tokens.css">
+    <link rel="stylesheet" href="cinema-kit/kit/base.css">
+    <link rel="stylesheet" href="cinema-kit/kit/layout.css">
+    <link rel="stylesheet" href="cinema-kit/kit/components.css">
+</head>
+<body>
+    <div class="l-page">
+        <!-- Header Navigation -->
+        <header class="l-header">
+            <div class="l-container c-header">
+                <a class="c-header__logo" href=" ">
+                    <svg class="c-icon c-icon--lg" aria-hidden="true"><use href="cinema-kit/kit/icons.svg#icon-logo"></use></svg>
+                    <span>Cinema.Tickets</span>
+                </a >
+                <nav class="c-nav" aria-label="Main">
+                    <a class="c-nav__link" href="index.html" aria-current="page">Movies</a >
+                    <a class="c-nav__link" href="bookings.html">Bookings</a >
+                    <a class="c-nav__link" href="cart.html">Cart <span class="c-counter" hidden="hidden" id="header-cart-counter">0</span></a >
+                </nav>
+                <div class="c-header__user">
+                    <!-- Guest State -->
+                    <div id="auth-guest" style="display: flex; gap: 12px;">
+                        <a class="c-btn c-btn--secondary c-btn--sm" href="login.html">Log in</a >
+                        <a class="c-btn c-btn--primary c-btn--sm" href="registration.html">Register</a >
+                    </div>
+                    <!-- Authenticated State -->
+                    <div id="auth-user" style="display: none; align-items: center; gap: 12px;">
+                        <a class="c-header__email" href="profile.html">
+                            <svg class="c-icon c-icon--sm" aria-hidden="true"><use href="cinema-kit/kit/icons.svg#icon-user"></use></svg>
+                            <span id="header-email">Loading...</span>
+                        </a >
+                        <button class="c-btn c-btn--ghost c-btn--sm" type="button" id="logout-btn">Log out</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="l-main">
+            <div class="l-container l-stack l-stack--lg">
+                
+                <!-- Page Title -->
+                <div class="c-page-title">
+                    <div class="c-page-title__main">
+                        <h1>Movies</h1>
+                        <div class="c-page-title__subtitle" id="movie-total">Loading...</div>
+                    </div>
+                </div>
+
+                <!-- Filter Bar -->
+                <form class="c-filter-bar" method="get" action="index.html" aria-label="Filters" id="filter-form">
+                    <div class="c-filter-bar__filters">
+                        <div class="c-field">
+                            <label class="c-field__label" for="filter-sorting">Sort by</label>
+                            <select class="c-select" id="filter-sorting" name="sorting">
+                                <option value="TitleAsc" selected>Title: A–Z</option>
+                                <option value="RatingDesc">Rating: high to low</option>
+                                <option value="RatingAsc">Rating: low to high</option>
+                                <option value="ReleaseDateDesc">Release date: newest first</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="c-filter-bar__actions">
+                        <button class="c-btn c-btn--primary" type="submit">Apply</button>
+                        <a class="c-btn c-btn--link" href="index.html">Reset</a >
+                    </div>
+                </form>
+
+                <!-- Movie Grid Container -->
+                <div class="l-grid l-grid--cols-4" id="movie-grid"></div>
+
+                <!-- Pagination Container -->
+                <nav class="c-pagination" aria-label="Pages" id="pagination"></nav>
+                
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="l-footer">
+            <div class="l-container c-footer">© 2026 Cinema.Tickets · Frontend study project</div>
+        </footer>
+    </div>
+
+    <!-- Modules -->
+    <script type="module" src="js/common.js"></script>
+    <script type="module" src="js/index.js"></script>
+</body>
+</html>

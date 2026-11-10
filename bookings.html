@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookings - Cinema.Tickets</title>
+    <link rel="stylesheet" href="cinema-kit/kit/tokens.css">
+    <link rel="stylesheet" href="cinema-kit/kit/base.css">
+    <link rel="stylesheet" href="cinema-kit/kit/layout.css">
+    <link rel="stylesheet" href="cinema-kit/kit/components.css">
+</head>
+<body>
+    <div class="l-page">
+        <header class="l-header">
+            <div class="l-container c-header">
+                <a class="c-header__logo" href=" ">
+                    <svg class="c-icon c-icon--lg" aria-hidden="true"><use href="cinema-kit/kit/icons.svg#icon-logo"></use></svg>
+                    <span>Cinema.Tickets</span>
+                </a >
+                <nav class="c-nav" aria-label="Main">
+                    <a class="c-nav__link" href="index.html">Movies</a >
+                    <a class="c-nav__link" href="bookings.html" aria-current="page">Bookings</a >
+                    <a class="c-nav__link" href="cart.html">Cart <span class="c-counter" hidden="hidden" id="header-cart-counter">0</span></a >
+                </nav>
+                <div class="c-header__user">
+                    <div id="auth-guest" style="display: none;"></div>
+                    <div id="auth-user" style="display: flex; align-items: center; gap: 12px;">
+                        <a class="c-header__email" href="profile.html">
+                            <svg class="c-icon c-icon--sm" aria-hidden="true"><use href="cinema-kit/kit/icons.svg#icon-user"></use></svg>
+                            <span id="header-email">Loading...</span>
+                        </a >
+                        <button class="c-btn c-btn--ghost c-btn--sm" type="button" id="logout-btn">Log out</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="l-main">
+            <div class="l-container l-stack l-stack--lg">
+                <div class="c-page-title">
+                    <div class="c-page-title__main">
+                        <h1>Bookings</h1>
+                    </div>
+                </div>
+                <div id="bookings-alerts"></div>
+                <div class="l-stack l-stack--sm" id="bookings-container"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/demo-mode.js"></script>
+    <script type="module" src="js/common.js"></script>
+    <script type="module" src="js/bookings.js"></script>
+</body>
+</html>

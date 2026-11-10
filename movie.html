@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details - Cinema.Tickets</title>
+    <link rel="stylesheet" href="cinema-kit/kit/tokens.css">
+    <link rel="stylesheet" href="cinema-kit/kit/base.css">
+    <link rel="stylesheet" href="cinema-kit/kit/layout.css">
+    <link rel="stylesheet" href="cinema-kit/kit/components.css">
+</head>
+<body>
+    <div class="l-page">
+        <header class="l-header">
+            <div class="l-container c-header">
+                <a class="c-header__logo" href=" ">
+                    <svg class="c-icon c-icon--lg" aria-hidden="true"><use href="cinema-kit/kit/icons.svg#icon-logo"></use></svg>
+                    <span>Cinema.Tickets</span>
+                </a >
+                <nav class="c-nav" aria-label="Main">
+                    <a class="c-nav__link" href="index.html">Movies</a >
+                    <a class="c-nav__link" href="bookings.html">Bookings</a >
+                    <a class="c-nav__link" href="cart.html">Cart <span class="c-counter" hidden="hidden" id="header-cart-counter">0</span></a >
+                </nav>
+                <div class="c-header__user">
+                    <div id="auth-guest" style="display: flex; gap: 12px;">
+                        <a class="c-btn c-btn--secondary c-btn--sm" href="login.html">Log in</a >
+                        <a class="c-btn c-btn--primary c-btn--sm" href="registration.html">Register</a >
+                    </div>
+                    <div id="auth-user" style="display: none; align-items: center; gap: 12px;">
+                        <a class="c-header__email" href="profile.html">
+                            <svg class="c-icon c-icon--sm" aria-hidden="true"><use href="cinema-kit/kit/icons.svg#icon-user"></use></svg>
+                            <span id="header-email">Loading...</span>
+                        </a >
+                        <button class="c-btn c-btn--ghost c-btn--sm" type="button" id="logout-btn">Log out</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="l-main">
+            <div class="l-container l-stack l-stack--lg">
+                <a class="c-back-link" href="index.html">
+                    <svg class="c-icon c-icon--sm" aria-hidden="true"><use href="cinema-kit/kit/icons.svg#icon-chevron-left"></use></svg>All movies
+                </a >
+
+                <section class="l-media" id="movie-header-area">
+                    <div class="c-poster c-poster--lg is-loading"></div>
+                    <div class="l-stack">
+                        <div class="c-skeleton c-skeleton--title"></div>
+                        <div class="c-skeleton c-skeleton--text"></div>
+                    </div>
+                </section>
+
+                <section class="l-section">
+                    <div class="l-section__header">
+                        <h2 class="l-section__title">Schedule</h2>
+                    </div>
+                    <nav class="c-date-tabs" aria-label="Session dates" id="date-tabs"></nav>
+                    <div class="l-stack l-stack--lg" id="sessions-container"></div>
+                </section>
+
+                <section class="l-section">
+                    <div class="l-section__header">
+                        <h2 class="l-section__title">Reviews</h2>
+                    </div>
+                    <div class="l-stack" id="reviews-list">
+                        <p class="u-muted">Loading reviews...</p >
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/demo-mode.js"></script>
+    <script type="module" src="js/common.js"></script>
+    <script type="module" src="js/movie.js"></script>
+</body>
+</html>

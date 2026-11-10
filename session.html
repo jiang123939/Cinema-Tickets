@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session - Cinema.Tickets</title>
+    <link rel="stylesheet" href="cinema-kit/kit/tokens.css">
+    <link rel="stylesheet" href="cinema-kit/kit/base.css">
+    <link rel="stylesheet" href="cinema-kit/kit/layout.css">
+    <link rel="stylesheet" href="cinema-kit/kit/components.css">
+</head>
+<body>
+    <div class="l-page">
+        <header class="l-header">
+            <div class="l-container c-header">
+                <a class="c-header__logo" href=" ">
+                    <svg class="c-icon c-icon--lg" aria-hidden="true"><use href="cinema-kit/kit/icons.svg#icon-logo"></use></svg>
+                    <span>Cinema.Tickets</span>
+                </a >
+                <nav class="c-nav" aria-label="Main">
+                    <a class="c-nav__link" href="index.html">Movies</a >
+                    <a class="c-nav__link" href="bookings.html">Bookings</a >
+                    <a class="c-nav__link" href="cart.html">Cart <span class="c-counter" hidden="hidden" id="header-cart-counter">0</span></a >
+                </nav>
+                <div class="c-header__user">
+                    <div id="auth-guest" style="display: flex; gap: 12px;">
+                        <a class="c-btn c-btn--secondary c-btn--sm" href="login.html">Log in</a >
+                        <a class="c-btn c-btn--primary c-btn--sm" href="registration.html">Register</a >
+                    </div>
+                    <div id="auth-user" style="display: none; align-items: center; gap: 12px;">
+                        <a class="c-header__email" href="profile.html">
+                            <svg class="c-icon c-icon--sm" aria-hidden="true"><use href="cinema-kit/kit/icons.svg#icon-user"></use></svg>
+                            <span id="header-email">Loading...</span>
+                        </a >
+                        <button class="c-btn c-btn--ghost c-btn--sm" type="button" id="logout-btn">Log out</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="l-main">
+            <div class="l-container l-stack l-stack--lg">
+                <a class="c-back-link" href="javascript:history.back()">
+                    <svg class="c-icon c-icon--sm" aria-hidden="true"><use href="cinema-kit/kit/icons.svg#icon-chevron-left"></use></svg>Back to the movie
+                </a >
+
+                <div class="c-page-title" id="session-header">
+                    <div class="c-page-title__main">
+                        <div class="c-skeleton c-skeleton--title" style="width: 300px;"></div>
+                    </div>
+                </div>
+
+                <div class="l-split">
+                    <div class="l-split__main">
+                        <div id="session-alerts"></div>
+                        <section class="c-card" aria-label="Seat map">
+                            <div class="c-card__body">
+                                <div class="c-seatmap" id="seat-map">
+                                    <div class="c-seatmap__screen" aria-hidden="true">Screen</div>
+                                    <div class="c-seatmap__rows" id="seat-rows"></div>
+                                </div>
+                                <ul class="c-legend" aria-label="Legend" id="seat-legend"></ul>
+                            </div>
+                        </section>
+                    </div>
+
+                    <aside class="l-split__aside" aria-label="Selected seats">
+                        <section class="c-summary">
+                            <h2 class="c-summary__title">Your seats</h2>
+                            <ul class="c-summary__list" id="summary-list">
+                                <li class="u-muted" id="no-seats-msg">No seats selected</li>
+                            </ul>
+                            <dl class="c-summary__lines">
+                                <div class="c-summary__line"><dt>Tickets</dt><dd id="summary-count">0</dd></div>
+                                <div class="c-summary__total"><dt>Total</dt><dd id="summary-total">0 ₽</dd></div>
+                            </dl>
+                            <div class="c-summary__actions">
+                                <button class="c-btn c-btn--primary c-btn--block" type="button" id="go-to-cart-btn" disabled>Go to cart</button>
+                            </div>
+                            <p class="c-summary__note" id="summary-note">Up to 8 seats per session.</p >
+                        </section>
+                    </aside>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/demo-mode.js"></script>
+    <script type="module" src="js/common.js"></script>
+    <script type="module" src="js/session.js"></script>
+</body>
+</html>
